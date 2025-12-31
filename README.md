@@ -262,13 +262,31 @@ with open('student.csv','r') as f:
 # Syntax
 #try Kesyword:
 # risky code
-#except Keyword Name of error:
+# except Keyword Name of error:
 #printing the info.. for user to understand the error
-# def divsion(n,m):
-#    if m==0 :
-#       raise Exception("ya devie nai  hogaa")
-#    print(n/m)
-# try:
-#  divsion(1,0)
-# except Exception as e :
-#    print(e)  
+ def divsion(n,m):
+    if m==0 :
+       raise Exception("ya devie nai  hogaa")
+    print(n/m)
+ try:
+  divsion(1,0)
+ except Exception as e :
+    print(e)  
+# custom Exception Class
+class MyException(Exception):
+    def __init__(self,info):
+        print(info)
+
+def division(num,den):
+    if type(num)!=int or type(den)!=int:
+        raise MyException("ary bhai number input do")
+    if den==0:
+        raise Exception("denoirator zero ha ")
+    return num/den
+try:
+    division(1,'ll')
+except MyException as e:
+    pass
+except Exception as e:
+    pass
+    
