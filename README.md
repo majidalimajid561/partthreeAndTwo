@@ -289,4 +289,30 @@ except MyException as e:
     pass
 except Exception as e:
     pass
-    
+
+    numberlist =[1,2,3,4,5]
+def squaresbylmda(numbers):
+ print(list(map(lambda x:x**2,numbers)))
+
+#converting  to upper case 
+words=['hello','abc','de','fg']
+def covertingCase(words):
+ print(list(map(lambda x:x.upper(),words)))
+
+
+# odd numbers in list
+def filteringevenAndOddNum(li):
+   evenList=list(filter(lambda x:x%2==0,li))
+   print(evenList)
+   oddList=list(filter(lambda x:x%2==1,li))
+   print(oddList)
+
+def findinsumbyreducefun(numberlist):
+   sum=functools.reduce(lambda a,b:a+b,numberlist)
+   print(sum)
+
+def findinProductbyreducefun(numberlist):
+   pro=functools.reduce(lambda a,b :a*b,numberlist)
+   print(pro)
+
+
