@@ -316,3 +316,29 @@ def findinProductbyreducefun(numberlist):
    print(pro)
 
 
+def My_Decorator(func):
+   def wrapper(*args):
+      print("---****---")
+      start=time.time()
+      func(*args)
+      print("total agruments",len(args))
+      print("---****---")
+      e=time.time()
+      print("Execution time is :",e-start,"sec")
+      return len(args)
+   return wrapper
+
+@My_Decorator
+def add(*args):
+   print("Sum of Two :",sum(args))
+
+
+
+def decor(n):
+   def outer(func):
+      def wraper(*args):
+         for i in range(*args) :
+          func(*args)
+      return wraper
+   return outer
+
